@@ -1,10 +1,11 @@
 import streamlit as st
 from langchain_anthropic import ChatAnthropic
 from crewai import Crew, Process, Agent
+from dotenv import load_dotenv
 import os
 
-# Set your Anthropic API key
-os.environ["ANTHROPIC_API_KEY"] = "sk-ant-api03-nYM_SEsU4dvtnC8n0SYQB2CSEySCAzIVOOL1lOlCx9s_zrwJYaC1SNSKFGzHyjsVk4xgINAtBn5PpDrOsoOoCQ-6Il51gAA"
+load_dotenv()
+api_key = os.environ.get("ANTHROPIC_API_KEY")
 
 # Create a Crew AI agent
 Nutritionist = Agent(
